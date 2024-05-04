@@ -7,6 +7,9 @@ from data2 import scrape_and_save
 app = Flask(__name__)
 CORS(app) 
 
+@app.route('/')
+def health_check():
+    return jsonify({'success':'API is Live'})
 
 @app.route('/resorts')
 def get_resorts_data():
